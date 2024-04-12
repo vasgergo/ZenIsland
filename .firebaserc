@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vasgergo-webkert": {
+      "hosting": {
+        "vasgergo-webkert": [
+          "vasgergo-webkert"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vasgergo-webkert"
+  }
+}
