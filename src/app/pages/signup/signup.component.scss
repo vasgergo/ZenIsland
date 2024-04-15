@@ -1,0 +1,33 @@
+/* Alapértelmezett stílusok */
+#login {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#login form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login label {
+  margin-bottom: 10px;
+}
+
+#login input[type="text"], #login input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#login button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
