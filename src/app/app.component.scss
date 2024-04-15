@@ -1,0 +1,25 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.menu-item {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  display: block;
+  border-radius: 10px;
+}
+
+.active-link {
+  background-color: darkblue;
+}
+
+
+.menu-item:hover {
+  color: #e8e817;
+}
