@@ -19,9 +19,8 @@ export class LoginComponent {
   });
 
 
-  login() {
+  onSubmit() {
     console.log(this.loginForm.value);
-
     this.authService.login(this.loginForm.get('email')?.value as string, this.loginForm.get('password')?.value as string)
       .then((res) => {
         console.log('Login successful');

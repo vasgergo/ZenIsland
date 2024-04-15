@@ -19,7 +19,14 @@ export class SignupComponent {
   });
 
   onSubmit() {
-    console.warn(this.signUpForm.value);
+    console.log(this.signUpForm.value);
+    this.authService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string)
+      .then((res) => {
+        console.log('Signup successful', res);
+      })
+      .catch((err) => {
+        console.log('Signup failed', err);
+      });
   }
 
 }
