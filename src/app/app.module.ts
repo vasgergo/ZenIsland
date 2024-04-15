@@ -9,6 +9,7 @@ import {getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingServi
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 import {AngularFireModule} from "@angular/fire/compat";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {AngularFireModule} from "@angular/fire/compat";
   ],
   providers: [
     ScreenTrackingService,
-    UserTrackingService
+    UserTrackingService,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
