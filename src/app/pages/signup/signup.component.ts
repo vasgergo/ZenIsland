@@ -38,8 +38,7 @@ export class SignupComponent {
           .catch((err) => {
             console.log('User NOT added to DB', err);
           });
-
-        localStorage.setItem('user', JSON.stringify(user));
+        this.userService.setLoggedInUser(res.user?.uid as string);
       })
       .catch((err) => {
         console.log('AUTH: Signup failed', err);

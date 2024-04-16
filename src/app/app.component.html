@@ -13,11 +13,10 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <div>My app</div>
+      <div class="menu-item" routerLink="/home">My app</div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end">
-        <a class="menu-item" routerLink="/signup" routerLinkActive="active-link">Sign Up</a>
-        <a class="menu-item" routerLink="/login" routerLinkActive="active-link">Login</a>
-        <a class="menu-item" routerLink="/login" routerLinkActive="active-link">Login</a>
+        <a class="menu-item" routerLink="/login" *ngIf="!userService.isLoggedIn()" routerLinkActive="active-link">Login</a>
+        <a class="menu-item" *ngIf="userService.isLoggedIn()" (click)="logout()">Logout</a>
       </div>
     </mat-toolbar>
     <!-- Other content goes here -->

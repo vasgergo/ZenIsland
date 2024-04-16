@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
+import {UserService} from "../../shared/services/user/user.service";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {AuthService} from "../../shared/services/auth.service";
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private userService: UserService) {
   }
 
 
@@ -24,6 +25,7 @@ export class LoginComponent {
     this.authService.login(this.loginForm.get('email')?.value as string, this.loginForm.get('password')?.value as string)
       .then((res) => {
         console.log('Login successful');
+        this.userService.setLoggedInUser(res.user?.uid as string);
         console.log(res);
       })
       .catch(() => {
