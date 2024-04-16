@@ -17,7 +17,6 @@
 
 #login input[type="text"], #login input[type="password"] {
   padding: 10px;
-  margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -30,4 +29,17 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+#login button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+#login .errorMessage div{
+  color: red !important;
+  margin-bottom: 3px;
+  padding: 5px;
+}
+
 
