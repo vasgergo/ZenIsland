@@ -22,7 +22,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     AppComponent
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
 
