@@ -1,5 +1,7 @@
 .sidenav-container {
   height: 100%;
+  background-color: #f3f3bd;
+  font-family: Bahnschrift, sans-serif;
 }
 
 .sidenav {
@@ -16,10 +18,17 @@
 }
 
 .active-link {
-  background-color: darkblue;
+  background-color: #8c3a00;
 }
-
 
 .menu-item:hover {
   color: #e8e817;
 }
+
+mat-toolbar{
+  background-color: #9d7611;
+}
+
+
+
+

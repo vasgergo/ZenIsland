@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './booking.component.scss'
 })
 export class BookingComponent {
+  selected: any;
 
 }
