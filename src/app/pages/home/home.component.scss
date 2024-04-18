@@ -17,11 +17,15 @@ mat-card button{
   border-radius: 25px;
   background-color: #f3ab22;
 }
+mat-card-content{
+  font-size: 15px;
+}
 
 //mobile
 @media screen and (max-width: 600px) {
+
   mat-card {
-    width: 300px;
+    width: 90%;
     margin: 20px;
   }
 }
