@@ -9,6 +9,8 @@ import {MatOption, provideNativeDateAdapter} from "@angular/material/core";
 import {MatList, MatListItem} from "@angular/material/list";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatSelect} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatButton} from "@angular/material/button";
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {MatSelect} from "@angular/material/select";
     MatOption,
     MatSelect,
     MatFormField,
-    MatLabel
+    MatLabel,
+    ReactiveFormsModule,
+    MatButton
   ]
 })
 export class BookingModule { }

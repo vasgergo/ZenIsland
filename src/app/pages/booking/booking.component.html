@@ -1,12 +1,13 @@
-<mat-card class="demo-inline-calendar-card">
-  <mat-calendar [(selected)]="selected"></mat-calendar>
-</mat-card>
+<form [formGroup]="bookingForm" >
+  <mat-card class="demo-inline-calendar-card">
+    <mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateChange()"></mat-calendar>
+  </mat-card>
+  <mat-form-field appearance="fill">
+    <mat-label>Options</mat-label>
+    <mat-select formControlName="time">
+      <mat-option *ngFor="let timeOption of timeOptions" [value]="timeOption">{{timeOption}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+</form>
 
-<mat-form-field appearance="fill">
-  <mat-label>Options</mat-label>
-  <mat-select>
-    <mat-option value="option1" disabled="true">Option 1</mat-option>
-    <mat-option value="option2">Option 2</mat-option>
-    <mat-option value="option3">Option 3</mat-option>
-  </mat-select>
-</mat-form-field>

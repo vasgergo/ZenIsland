@@ -11,7 +11,7 @@ export class HomeComponent {
   constructor(private router: Router) {
   }
 
-  book() {
-    this.router.navigate(['/booking']);
+  book(type: string) {
+    this.router.navigate(['/booking'], {queryParams: {type: type}});
   }
 }

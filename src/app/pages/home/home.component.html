@@ -1,12 +1,13 @@
 <div class="cards"
      fxLayout="row wrap"
      fxLayoutAlign="space-evenly center">
+  <!--  aromatherapy-->
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Card 1</mat-card-title>
-      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+      <mat-card-title>Aromatherapy massage</mat-card-title>
+      <mat-card-subtitle>60 min 30EUR</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="assets/massageCover/aromatherapy.jpg" alt="Photo of a aromatherpy">
     <mat-card-content>
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -15,15 +16,16 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="book()">Book</button>
+      <button mat-button (click)="book('aroma')">Book</button>
     </mat-card-actions>
   </mat-card>
+  <!-- couples-->
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Card 1</mat-card-title>
-      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+      <mat-card-title>Couples massage</mat-card-title>
+      <mat-card-subtitle>60min 50EUR</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="assets/massageCover/couples.jpg" alt="Photo of a couples">
     <mat-card-content>
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -32,16 +34,16 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button (click)="book('couples')">Book</button>
     </mat-card-actions>
   </mat-card>
+  <!-- thai-->
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Full body massage</mat-card-title>
-      <mat-card-subtitle>60 min</mat-card-subtitle>
+      <mat-card-title>Thai massage</mat-card-title>
+      <mat-card-subtitle>60 min 30EUR</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="assets/massageCover/thai.jpg" alt="Photo of a thai">
     <mat-card-content>
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -50,8 +52,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button (click)="book('thai')">Book</button>
     </mat-card-actions>
   </mat-card>
 </div>
