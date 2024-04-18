@@ -7,6 +7,8 @@ import {User} from "../../models/User";
 })
 export class UserService {
 
+  path: string = 'Users';
+
   constructor(private afs: AngularFirestore) {
   }
 
@@ -23,7 +25,7 @@ export class UserService {
   }
 
   create(user: User) {
-    return this.afs.collection<User>('Users').add(user);
+    return this.afs.collection<User>(this.path).add(user);
   }
 
   logout() {
