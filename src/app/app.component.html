@@ -1,3 +1,6 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Playball&display=swap');
+</style>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="over">
     <mat-nav-list>
@@ -13,7 +16,7 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <div class="menu-item" routerLink="/home">My app</div>
+      <div id="compName" routerLink="/home"><img src="assets/logo.jpg" alt="logo"><span>Zen Island</span></div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end">
         <a class="menu-item" fxHide.lt-sm routerLink="/booking" routerLinkActive="active-link">booking</a>
         <a class="menu-item" fxHide.lt-sm routerLink="/login" *ngIf="!userService.isLoggedIn()"

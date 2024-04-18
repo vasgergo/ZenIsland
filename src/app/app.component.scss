@@ -1,3 +1,31 @@
+
+#compName img {
+  height: 50px;
+  border-radius: 10px;
+}
+
+#compName {
+  display: flex;
+  height: 100%;
+  align-content: center;
+  color: #6b2e02;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#compName > * {
+  margin: 0 10px;
+}
+
+#compName span {
+  font-size: 40px;
+  font-family: "Playball", cursive;
+  font-weight: 200;
+  font-style: normal;
+}
+
 .sidenav-container {
   height: 100%;
   background-color: #f3f3bd;
@@ -25,7 +53,7 @@
   color: #e8e817;
 }
 
-mat-toolbar{
+mat-toolbar {
   background-color: #9d7611;
 }
 
