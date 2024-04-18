@@ -16,10 +16,12 @@ import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { CustomDatePipe } from './shared/pipes/custom-date.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomDatePipe
   ],
   imports: [
     BrowserModule,
