@@ -40,7 +40,7 @@ export class BookingComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.bookingForm.get('time')?.disable();
 
-    this.bookingForm.get('UID')?.setValue(this.userService.getLoggedInUserId());
+    this.bookingForm.get('UID')?.setValue(this.userService.getSignedInUserId());
     this.route.queryParams.subscribe(params => {
       this.type = params['type'];
       this.bookingForm.get('type')?.setValue(this.type);

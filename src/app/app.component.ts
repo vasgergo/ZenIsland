@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(public userService: UserService) {
   }
 
-  logout() {
-    this.userService.logout();
+  signOut() {
+    this.userService.signout();
   }
 }

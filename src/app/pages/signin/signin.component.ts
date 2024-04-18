@@ -4,28 +4,28 @@ import {AuthService} from "../../shared/services/auth.service";
 import {UserService} from "../../shared/services/user/user.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  selector: 'app-singin',
+  templateUrl: './signin.component.html',
+  styleUrl: './signin.component.scss'
 })
-export class LoginComponent {
+export class SigninComponent {
 
   constructor(private authService: AuthService, private userService: UserService) {
   }
 
 
-  loginForm = new FormGroup({
+  signinForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
 
   onSubmit() {
-    console.log(this.loginForm.value);
-    this.authService.login(this.loginForm.get('email')?.value as string, this.loginForm.get('password')?.value as string)
+    console.log(this.signinForm.value);
+    this.authService.login(this.signinForm.get('email')?.value as string, this.signinForm.get('password')?.value as string)
       .then((res) => {
         console.log('Login successful');
-        this.userService.setLoggedInUser(res.user?.uid as string);
+        this.userService.setSignedInUser(res.user?.uid as string);
         console.log(res);
       })
       .catch(() => {

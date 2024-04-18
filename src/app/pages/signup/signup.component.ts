@@ -1,5 +1,5 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {User} from "../../shared/models/User";
 import {UserService} from "../../shared/services/user/user.service";
@@ -54,7 +54,7 @@ export class SignupComponent implements OnChanges, OnInit {
           .catch((err) => {
             console.log('User NOT added to DB', err);
           });
-        this.userService.setLoggedInUser(res.user?.uid as string);
+        this.userService.setSignedInUser(res.user?.uid as string);
       })
       .catch((err) => {
         console.log('AUTH: Signup failed', err);

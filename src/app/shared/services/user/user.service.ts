@@ -12,23 +12,22 @@ export class UserService {
   constructor(private afs: AngularFirestore) {
   }
 
-  setLoggedInUser(userId: string) {
+  setSignedInUser(userId: string) {
     localStorage.setItem('userId', userId);
   }
 
-  getLoggedInUserId() {
+  getSignedInUserId() {
     return localStorage.getItem('userId');
   }
 
-  isLoggedIn() {
+  isSignedIn() {
     return localStorage.getItem('userId') !== null;
   }
 
   create(user: User) {
     return this.afs.collection<User>(this.path).add(user);
   }
-
-  logout() {
+  signout() {
     localStorage.removeItem('userId');
   }
 }
