@@ -1,13 +1,12 @@
-<p>booking works!</p>
 <mat-card class="demo-inline-calendar-card">
   <mat-calendar [(selected)]="selected"></mat-calendar>
 </mat-card>
-<p>Selected date: {{selected}}</p>
 
-<mat-list>
-  <mat-list-item>
-    <mat-radio-button>{{1}}</mat-radio-button>
-    <mat-radio-button>{{2}}</mat-radio-button>
-    <mat-radio-button>{{3}}</mat-radio-button>
-  </mat-list-item>
-</mat-list>
+<mat-form-field appearance="fill">
+  <mat-label>Options</mat-label>
+  <mat-select>
+    <mat-option value="option1" disabled="true">Option 1</mat-option>
+    <mat-option value="option2">Option 2</mat-option>
+    <mat-option value="option3">Option 3</mat-option>
+  </mat-select>
+</mat-form-field>

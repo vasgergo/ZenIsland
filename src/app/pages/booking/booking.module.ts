@@ -5,10 +5,10 @@ import { BookingRoutingModule } from './booking-routing.module';
 import { BookingComponent } from './booking.component';
 import {MatCard} from "@angular/material/card";
 import {MatCalendar} from "@angular/material/datepicker";
-import {provideNativeDateAdapter} from "@angular/material/core";
+import {MatOption, provideNativeDateAdapter} from "@angular/material/core";
 import {MatList, MatListItem} from "@angular/material/list";
-import {MatCheckbox} from "@angular/material/checkbox";
-import {MatRadioButton} from "@angular/material/radio";
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatSelect} from "@angular/material/select";
 
 
 @NgModule({
@@ -24,9 +24,11 @@ import {MatRadioButton} from "@angular/material/radio";
     MatCard,
     MatCalendar,
     MatListItem,
-    MatCheckbox,
     MatList,
-    MatRadioButton
+    MatOption,
+    MatSelect,
+    MatFormField,
+    MatLabel
   ]
 })
 export class BookingModule { }
