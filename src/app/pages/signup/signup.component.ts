@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {User} from "../../shared/models/User";
@@ -9,17 +9,9 @@ import {UserService} from "../../shared/services/user/user.service";
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
-export class SignupComponent implements OnChanges, OnInit {
+export class SignupComponent {
 
   constructor(private authService: AuthService, private userService: UserService) {
-  }
-
-  ngOnInit() {
-    this.signUpForm.statusChanges.subscribe(status => {
-        if (status === 'INVALID') {
-          console.log(this.signUpForm);
-      }
-    });
   }
 
   passwordMatchValidator(control:AbstractControl) : ValidationErrors | null {
@@ -61,8 +53,5 @@ export class SignupComponent implements OnChanges, OnInit {
       });
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-  };
 
 }

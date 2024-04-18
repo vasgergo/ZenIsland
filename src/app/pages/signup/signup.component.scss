@@ -1,45 +1,20 @@
-/* Alapértelmezett stílusok */
-#login {
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+mat-card {
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
   padding: 20px;
 }
 
-#login form {
-  display: flex;
-  flex-direction: column;
+mat-form-field {
+  width: 100%;
 }
 
-#login label {
-  margin-bottom: 10px;
+button {
+  margin-top: 20px;
 }
-
-#login input[type="text"], #login input[type="password"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-#login button {
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#login button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-
-#login .errorMessage div{
-  color: red !important;
-  margin-bottom: 3px;
-  padding: 5px;
-}
-
-

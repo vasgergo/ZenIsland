@@ -1,58 +1,69 @@
-<h2>Sign Up</h2>
-<div id="login">
-  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <label for="username">Username</label>
-    <input type="text" formControlName="username" placeholder="Username" id="username">
-    <div *ngIf="signUpForm.get('username')?.touched" class="errorMessage">
-      <div *ngIf="signUpForm.get('username')?.errors?.['required']">
-        Username is required
-      </div>
-      <div *ngIf="signUpForm.get('username')?.errors?.['minlength']">
-        Username must be at least {{this.signUpForm.get('username')?.errors?.['minlength']?.['requiredLength']}}
-        characters
-      </div>
-      <div *ngIf="signUpForm.get('username')?.errors?.['maxlength']">
-        Username must be less then {{this.signUpForm.get('username')?.errors?.['maxlength']?.['requiredLength']}}
-        characters
-      </div>
-    </div>
-
-    <label for="email">Email</label>
-    <input type="text" formControlName="email" placeholder="Email" id="email">
-    <div *ngIf="signUpForm.get('email')?.touched" class="errorMessage">
-      <div *ngIf="signUpForm.get('email')?.errors?.['required']">
-        Email is required
-      </div>
-      <div *ngIf="signUpForm.get('email')?.errors?.['email']">
-        Email must be a valid email address
-      </div>
-    </div>
-    <label for="password">Password</label>
-    <input type="password" formControlName="password" placeholder="Password" id="password">
-    <div *ngIf="signUpForm.get('password')?.touched" class="errorMessage">
-      <div *ngIf="signUpForm.get('password')?.errors?.['required']">
-        Password is required
-      </div>
-      <div *ngIf="signUpForm.get('password')?.errors?.['minlength']">
-        Password must be at least {{this.signUpForm.get('password')?.errors?.['minlength']?.['requiredLength']}}
-        characters
-      </div>
-      <div *ngIf="signUpForm.get('password')?.errors?.['maxlength']">
-        Password must be less then {{this.signUpForm.get('password')?.errors?.['maxlength']?.['requiredLength']}}
-        characters
-      </div>
-    </div>
-    <label for="confirmPassword">Confirm Password</label>
-    <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" id="confirmPassword">
-    <div *ngIf="signUpForm.get('confirmPassword')?.touched" class="errorMessage">
-      <div *ngIf="signUpForm.get('confirmPassword')?.errors?.['required']">
-        Confirm Password is required
-      </div>
-
-      <div *ngIf="signUpForm?.errors?.['passwordMismatch']">
-        Passwords must match
-      </div>
-    </div>
-    <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
-  </form>
+<div class="signup-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Regisztráció</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Felhasználónév</mat-label>
+          <input matInput type="text" formControlName="username" placeholder="Felhasználónév" required>
+          <mat-error *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid">
+            <div *ngIf="signUpForm.get('username')?.errors?.['required']">
+              Felhasználónév szükséges
+            </div>
+            <div *ngIf="signUpForm.get('username')?.errors?.['minlength']">
+              A felhasználónévnek legalább {{this.signUpForm.get('username')?.errors?.['minlength']?.['requiredLength']}} karakter hosszúnak kell lennie
+            </div>
+            <div *ngIf="signUpForm.get('username')?.errors?.['maxlength']">
+              A felhasználónévnek rövidebbnek kell lennie, mint {{this.signUpForm.get('username')?.errors?.['maxlength']?.['requiredLength']}} karakter
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="Email" required>
+          <mat-error *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid">
+            <div *ngIf="signUpForm.get('email')?.errors?.['required']">
+              Email szükséges
+            </div>
+            <div *ngIf="signUpForm.get('email')?.errors?.['email']">
+              Érvényes email címet kell megadni
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Jelszó</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Jelszó" required>
+          <mat-error *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid">
+            <div *ngIf="signUpForm.get('password')?.errors?.['required']">
+              Jelszó szükséges
+            </div>
+            <div *ngIf="signUpForm.get('password')?.errors?.['minlength']">
+              A jelszónak legalább {{this.signUpForm.get('password')?.errors?.['minlength']?.['requiredLength']}} karakter hosszúnak kell lennie
+            </div>
+            <div *ngIf="signUpForm.get('password')?.errors?.['maxlength']">
+              A jelszónak rövidebbnek kell lennie, mint {{this.signUpForm.get('password')?.errors?.['maxlength']?.['requiredLength']}} karakter
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Jelszó megerősítése</mat-label>
+          <input matInput type="password" formControlName="confirmPassword" placeholder="Jelszó megerősítése" required>
+          <mat-error *ngIf="signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid">
+            <div *ngIf="signUpForm.get('confirmPassword')?.errors?.['required']">
+              Jelszó megerősítése szükséges
+            </div>
+            <div *ngIf="signUpForm?.errors?.['passwordMismatch']">
+              A jelszavaknak egyezniük kell
+            </div>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Regisztráció</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/signin">Bejelentkezés</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
