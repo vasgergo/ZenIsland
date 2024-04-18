@@ -18,7 +18,7 @@
         <a class="menu-item" fxHide.lt-sm routerLink="/booking" routerLinkActive="active-link">booking</a>
         <a class="menu-item" fxHide.lt-sm routerLink="/login" *ngIf="!userService.isLoggedIn()"
            routerLinkActive="active-link">Login</a>
-        <a class="menu-item" *ngIf="userService.isLoggedIn()" (click)="logout()">Logout</a>
+        <a class="menu-item" fxHide.lt-sm *ngIf="userService.isLoggedIn()" (click)="logout()">Logout</a>
       </div>
     </mat-toolbar>
     <!-- Other content goes here -->
