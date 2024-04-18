@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {Booking} from "../../models/Booking";
 
@@ -9,13 +9,22 @@ export class BookingService {
 
   path: string = 'Bookings';
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore) {
+  }
 
-    create(booking:Booking){
+  create(booking: Booking) {
     return this.afs.collection<Booking>(this.path).doc(booking.id).set(booking);
   }
 
-  createId(){
+  createId() {
     return this.afs.createId();
+  }
+
+  getAll() {
+    return this.afs.collection<Booking>(this.path).valueChanges();
+  }
+
+  getBookingByDate(date: string) {
+    return this.afs.collection<Booking>(this.path, ref => ref.where('date', '==', date)).valueChanges();
   }
 }

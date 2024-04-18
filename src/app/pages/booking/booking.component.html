@@ -1,11 +1,11 @@
-<form [formGroup]="bookingForm" >
+<form [formGroup]="bookingForm">
   <mat-card class="demo-inline-calendar-card">
     <mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateChange()"></mat-calendar>
   </mat-card>
   <mat-form-field appearance="fill">
     <mat-label>Options</mat-label>
     <mat-select formControlName="time">
-      <mat-option *ngFor="let timeOption of timeOptions" [value]="timeOption">{{timeOption}}</mat-option>
+      <mat-option *ngFor="let timeOption of availableTimeOptions" [value]="timeOption">{{timeOption}}</mat-option>
     </mat-select>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
