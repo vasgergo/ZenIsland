@@ -1,14 +1,32 @@
 <form [formGroup]="bookingForm">
-  <mat-card class="demo-inline-calendar-card">
-    <mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateChange()"></mat-calendar>
-  </mat-card>
-  <mat-form-field appearance="fill">
-    <mat-label>Options</mat-label>
-    <mat-select formControlName="time">
-      <mat-option *ngFor="let timeOption of availableTimeOptions" [value]="timeOption">{{timeOption}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
-  <div>{{selectedDate | date:'yyyy-MM-dd'}}</div>
+    <div class="cardDiv">
+      <h2>Date</h2>
+      <mat-card class="datePckr">
+        <mat-card-title>
+        </mat-card-title>
+        <mat-calendar id="date" [(selected)]="selectedDate" (selectedChange)="onDateChange()"></mat-calendar>
+      </mat-card>
+    </div>
+    <div class="cardDiv">
+      <h2>Time</h2>
+      <mat-card class="dropDown">
+        <mat-form-field appearance="fill" (click)="checkAvailable()">
+          <mat-label #timeText>{{timeTValue}}</mat-label>
+          <mat-select formControlName="time" >
+            <mat-option *ngFor="let timeOption of availableTimeOptions" [value]="timeOption">{{timeOption}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card>
+    </div>
 </form>
+<div>
+
+</div>
+<div class="buttonContainer">
+  <h2>{{type}}</h2>
+  <h2>{{selectedDate | date: 'yyyy/MM/dd'}}</h2>
+  <h2>{{bookingForm.get('time')?.value}}</h2>
+  <button id="submitButton" [disabled]="bookingForm.invalid" (click)="onSubmit()">Submit</button>
+</div>
+
 

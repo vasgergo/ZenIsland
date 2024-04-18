@@ -1,5 +1,5 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, NgModel, Validators} from "@angular/forms";
+import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {FormControl, FormGroup,  Validators} from "@angular/forms";
 import {UserService} from "../../shared/services/user/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {BookingService} from "../../shared/services/booking/booking.service";
@@ -20,7 +20,9 @@ export class BookingComponent implements OnInit, OnDestroy {
   @Input()
   selectedDate: string = '';
   availableTimeOptions: Array<string> = this.possibleTimeOptions;
+  type: string = '';
   private subscription: Subscription = new Subscription();
+  @ViewChild('timeText') timeText: ElementRef | undefined;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private bookingService: BookingService, private datePipe: CustomDatePipe) {
   }
@@ -32,14 +34,16 @@ export class BookingComponent implements OnInit, OnDestroy {
     time: new FormControl('', Validators.required),
   });
 
+  readonly typeOptions: Array<string> = ['Type 1', 'Type 2', 'Type 3', 'Type 4', 'Type 5', 'Type 6', 'Type 7', 'Type 8', 'Type 9', 'Type 10'];
+  timeTValue: string = 'Choose time';
+
   ngOnInit() {
     this.bookingForm.get('time')?.disable();
+
     this.bookingForm.get('UID')?.setValue(this.userService.getLoggedInUserId());
-
-
     this.route.queryParams.subscribe(params => {
-      const type = params['type'];
-      this.bookingForm.get('type')?.setValue(type);
+      this.type = params['type'];
+      this.bookingForm.get('type')?.setValue(this.type);
     });
   }
 
@@ -80,6 +84,18 @@ export class BookingComponent implements OnInit, OnDestroy {
     this.availableTimeOptions = this.possibleTimeOptions.filter(time => {
       return !bookings.some(booking => booking.time === time);
     });
+  }
+
+  checkAvailable() {
+    if (this.bookingForm.get('date')?.value === '') {
+      this.timeText?.nativeElement.classList.add('textDanger');
+      this.timeTValue = 'Choose date first';
+      setTimeout(() => {
+        this.timeText?.nativeElement.classList.remove('textDanger');
+        this.timeTValue = 'Choose time';
+      }, 3000);
+    }
+
   }
 }
 

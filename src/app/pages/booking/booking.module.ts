@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BookingRoutingModule } from './booking-routing.module';
 import { BookingComponent } from './booking.component';
-import {MatCard} from "@angular/material/card";
+import {MatCard, MatCardTitle} from "@angular/material/card";
 import {MatCalendar} from "@angular/material/datepicker";
 import {MatOption, provideNativeDateAdapter} from "@angular/material/core";
 import {MatList, MatListItem} from "@angular/material/list";
@@ -32,7 +32,8 @@ import {MatButton} from "@angular/material/button";
     MatFormField,
     MatLabel,
     ReactiveFormsModule,
-    MatButton
+    MatButton,
+    MatCardTitle
   ]
 })
 export class BookingModule { }
