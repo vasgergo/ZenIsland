@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup,  Validators} from "@angular/forms";
 import {UserService} from "../../shared/services/user/user.service";
 import {ActivatedRoute} from "@angular/router";
@@ -17,7 +17,7 @@ export class BookingComponent implements OnInit, OnDestroy {
 
   readonly possibleTimeOptions: Array<string> = ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
 
-  @Input()
+
   selectedDate: string = '';
   availableTimeOptions: Array<string> = this.possibleTimeOptions;
   type: string = '';
@@ -34,7 +34,6 @@ export class BookingComponent implements OnInit, OnDestroy {
     time: new FormControl('', Validators.required),
   });
 
-  readonly typeOptions: Array<string> = ['Type 1', 'Type 2', 'Type 3', 'Type 4', 'Type 5', 'Type 6', 'Type 7', 'Type 8', 'Type 9', 'Type 10'];
   timeTValue: string = 'Choose time';
 
   ngOnInit() {
