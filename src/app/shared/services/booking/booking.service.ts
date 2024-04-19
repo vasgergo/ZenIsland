@@ -27,4 +27,9 @@ export class BookingService {
   getBookingByDate(date: string) {
     return this.afs.collection<Booking>(this.path, ref => ref.where('date', '==', date)).valueChanges();
   }
+
+  delete(id: string) {
+    return this.afs.collection<Booking>(this.path).doc(id).delete();
+
+  }
 }
