@@ -21,10 +21,11 @@ export class BookingService {
   }
 
   getAllByUID(UID: string) {
-    return this.afs.collection<Booking>(this.path, ref => ref.where('UID', '==', UID)).valueChanges();
+    return this.afs.collection<Booking>(this.path, ref => ref.where('UID', '==', UID).orderBy('date', 'asc')).valueChanges();
   }
 
   getBookingByDate(date: string) {
+
     return this.afs.collection<Booking>(this.path, ref => ref.where('date', '==', date)).valueChanges();
   }
 
