@@ -5,22 +5,23 @@
   <mat-sidenav #sidenav class="sidenav" mode="over">
     <mat-nav-list>
       <a mat-list-item routerLink="/home" (click)="sidenav.close()">Home</a>
+      <a mat-list-item *ngIf="userService.isSignedIn()" (click)="sidenav.close()" routerLink="/myBookings">My bookings</a>
       <a mat-list-item *ngIf="userService.isSignedIn()" (click)="sidenav.close(); signOut()">Sign out</a>
       <a mat-list-item *ngIf="!userService.isSignedIn()" routerLink="/signin" (click)="sidenav.close()" >Sign in</a>
-      <!--      <a mat-list-item routerLink="/contact" (click)="sidenav.close()">Contact</a>-->
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar>
-      <button mat-icon-button (click)="sidenav.toggle()">
+      <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
       <div id="compName" routerLink="/home"><img src="assets/logo.jpg" alt="logo"><span>Zen Island</span></div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end">
-        <a class="menu-item" fxHide.lt-sm routerLink="/signin" *ngIf="!userService.isSignedIn()"
-           routerLinkActive="active-link">Sign in</a>
-        <a class="menu-item" fxHide.lt-sm *ngIf="userService.isSignedIn()" (click)="signOut()">Sign out</a>
+        <a class="menu-item" fxHide.lt-md routerLinkActive="active-link" routerLink="/home">Home</a>
+        <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" routerLinkActive="active-link" routerLink="/myBookings">My bookings</a>
+        <a class="menu-item" fxHide.lt-md *ngIf="!userService.isSignedIn()" routerLinkActive="active-link" routerLink="/signin">Sign in</a>
+        <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" (click)="signOut()">Sign out</a>
       </div>
     </mat-toolbar>
     <!-- Other content goes here -->

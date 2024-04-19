@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {UserService} from "../../shared/services/user/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-singin',
@@ -10,7 +11,7 @@ import {UserService} from "../../shared/services/user/user.service";
 })
 export class SigninComponent {
 
-  constructor(private authService: AuthService, private userService: UserService) {
+  constructor(private authService: AuthService, private userService: UserService, private router: Router) {
   }
 
 
@@ -27,6 +28,7 @@ export class SigninComponent {
         console.log('Login successful');
         this.userService.setSignedInUser(res.user?.uid as string);
         console.log(res);
+        this.router.navigate(['/home']);
       })
       .catch(() => {
         console.log('Login failed');

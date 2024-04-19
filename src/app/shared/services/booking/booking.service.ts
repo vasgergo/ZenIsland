@@ -20,8 +20,8 @@ export class BookingService {
     return this.afs.createId();
   }
 
-  getAll() {
-    return this.afs.collection<Booking>(this.path).valueChanges();
+  getAllByUID(UID: string) {
+    return this.afs.collection<Booking>(this.path, ref => ref.where('UID', '==', UID)).valueChanges();
   }
 
   getBookingByDate(date: string) {
