@@ -24,7 +24,7 @@ Választott téma: **Masszázs szalon időpontfoglaló webalkalmazása**
 
 - **Adatmodell definiálása (legalább 4 TypeScript interfész vagy class formájában (ugyanennyi kollekció))**
   - [Itt vannak az adatmodelljeim](src/app/shared/models)
-  - _Jelenleg csak 2 van_
+  - _Jelenleg csak 3 van_
 
 
 - **Alkalmazás felbontása megfelelő számú komponensre (egyetlen komponens TS és HTML kódja sem haladja meg a 250 sort és soronként a 400 karaktert)**
