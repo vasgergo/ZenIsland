@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {UserService} from "../../shared/services/user/user.service";
@@ -9,7 +9,13 @@ import {Router} from "@angular/router";
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
-export class SigninComponent {
+export class SigninComponent implements OnInit{
+
+  invalidSignIn = false;
+
+  ngOnInit() {
+    this.invalidSignIn = false;
+  }
 
   constructor(private authService: AuthService, private userService: UserService, private router: Router) {
   }
@@ -22,7 +28,6 @@ export class SigninComponent {
 
 
   onSubmit() {
-    console.log(this.signinForm.value);
     this.authService.login(this.signinForm.get('email')?.value as string, this.signinForm.get('password')?.value as string)
       .then((res) => {
         console.log('Login successful');
@@ -32,6 +37,8 @@ export class SigninComponent {
       })
       .catch(() => {
         console.log('Login failed');
+        this.signinForm.reset();
+        this.invalidSignIn = true;
       });
   }
 }
