@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {FormControl, FormGroup,  Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../shared/services/user/user.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {BookingService} from "../../shared/services/booking/booking.service";
 import {Booking} from "../../shared/models/Booking";
 import {CustomDatePipe} from "../../shared/pipes/custom-date.pipe";
@@ -24,8 +24,7 @@ export class BookingComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
   @ViewChild('timeText') timeText: ElementRef | undefined;
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private bookingService: BookingService, private datePipe: CustomDatePipe) {
-  }
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router, private bookingService: BookingService, private datePipe: CustomDatePipe){}
 
   bookingForm = new FormGroup({
     UID: new FormControl('', Validators.required),
@@ -64,6 +63,7 @@ export class BookingComponent implements OnInit, OnDestroy {
 
     this.bookingService.create(booking).then(r => {
       console.log('Booking created', r);
+      this.router.navigate(['/myBookings']);
     });
   }
 
@@ -79,7 +79,10 @@ export class BookingComponent implements OnInit, OnDestroy {
     });
   }
 
-  updateTimeOptions(bookings: Array<Booking>) {
+  updateTimeOptions(bookings
+                      :
+                      Array<Booking>
+  ) {
     this.availableTimeOptions = this.possibleTimeOptions.filter(time => {
       return !bookings.some(booking => booking.time === time);
     });
