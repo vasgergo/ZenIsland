@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {Observable} from "rxjs";
+import {Massage} from "../../models/Massage";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ export class MassageService {
 
     path: string = 'Massages';
 
-    getAll(){
-      return this.afs.collection(this.path).valueChanges();
+    getAll():Observable<Massage[]>{
+      return this.afs.collection<Massage>(this.path).valueChanges();
     }
 }

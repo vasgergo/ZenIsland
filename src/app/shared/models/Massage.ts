@@ -1,7 +1,7 @@
 export interface Massage {
     name: string;
     description: string;
-    price: number;
-    duration: number;
+    price: number; //eur
+    duration: number; //minutes
     image: string;
 }
