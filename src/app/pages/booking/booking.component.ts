@@ -94,7 +94,6 @@ export class BookingComponent implements OnInit, OnDestroy {
         this.timeTValue = 'Choose time';
       }, 3000);
     }
-
   }
 }
 
