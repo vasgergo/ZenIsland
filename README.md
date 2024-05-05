@@ -72,8 +72,8 @@ Választott téma: **Masszázs szalon időpontfoglaló webalkalmazása**
 
 
 - **Legalább 2 különböző Lifecycle Hook használata a teljes projektben (értelmes tartalommal, nem üresen)**
-  - [ngOnInit 21.sor](src/app/pages/my-bookings/my-bookings.component.ts)
-  - [ngOnDestroy 27.sor](src/app/pages/my-bookings/my-bookings.component.ts)
+  - [ngOnInit 30.sor](src/app/pages/my-bookings/my-bookings.component.ts)
+  - [ngOnDestroy 36.sor](src/app/pages/my-bookings/my-bookings.component.ts)
 
 
 - **CRUD műveletek mindegyike megvalósult (Promise, Observable használattal)**
