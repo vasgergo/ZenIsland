@@ -20,6 +20,10 @@ export class BookingService {
     return this.afs.createId();
   }
 
+  updateType(id: string, type: string) {
+    return this.afs.collection<Booking>(this.path).doc(id).update({type: type});
+  }
+
   getAllByUID(UID: string) {
     return this.afs.collection<Booking>(this.path, ref => ref.where('UID', '==', UID).orderBy('date', 'asc')).valueChanges();
   }
@@ -30,6 +34,5 @@ export class BookingService {
 
   delete(id: string) {
     return this.afs.collection<Booking>(this.path).doc(id).delete();
-
   }
 }

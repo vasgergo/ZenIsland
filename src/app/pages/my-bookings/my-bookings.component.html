@@ -6,7 +6,11 @@
     <!-- Type Column -->
     <ng-container matColumnDef="type">
       <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
-      <mat-cell *matCellDef="let booking"> {{booking.type}} </mat-cell>
+      <mat-cell *matCellDef="let booking">
+        <mat-select #selectValue [value]="booking.type" class="massageTypeSelect" (selectionChange)="massageTypeChange(selectValue, booking)">
+            <mat-option class="typeOption" *ngFor="let type of massageTypes" [value]="type">{{type}}</mat-option>
+        </mat-select>
+      </mat-cell>
     </ng-container>
 
     <!-- Date Column -->
