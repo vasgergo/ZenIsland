@@ -49,7 +49,7 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
-          <mat-label>Conrim password</mat-label>
+          <mat-label>Confirm password</mat-label>
           <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm password" required>
           <mat-error
             *ngIf="signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.errors?.['required']">
