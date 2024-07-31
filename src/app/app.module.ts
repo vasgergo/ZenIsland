@@ -17,6 +17,7 @@ import {MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { CustomDatePipe } from './shared/pipes/custom-date.pipe';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,9 +25,9 @@ import { CustomDatePipe } from './shared/pipes/custom-date.pipe';
     CustomDatePipe
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-
     MatSidenavModule,
     MatToolbarModule,
     AngularFireModule.initializeApp({
