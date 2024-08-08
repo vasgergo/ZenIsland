@@ -24,9 +24,7 @@
         <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" (click)="signOut()">Sign out</a>
       </div>
     </mat-toolbar>
-    <div class="content">
       <router-outlet></router-outlet>
-    </div>
     <footer>
       <div class="company-name">Zen Island Company</div>
       <div class="phone">+36 99 123 45678</div>
