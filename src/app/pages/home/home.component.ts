@@ -31,8 +31,6 @@ export class HomeComponent implements OnInit, OnDestroy{
     }
   }
 
-
-
   book(type: string) {
     if (!this.userService.isSignedIn()) {
       this.router.navigate(['/signin']);

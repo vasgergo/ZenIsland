@@ -22,7 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
-    CustomDatePipe
+    CustomDatePipe,
   ],
   imports: [
     HttpClientModule,

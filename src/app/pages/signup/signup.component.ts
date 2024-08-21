@@ -27,12 +27,9 @@ export class SignupComponent {
     this.authService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string)
       .then((res) => {
         console.log('AUTH: Signup successful', res);
-        const user: User = {
-          id: res.user?.uid as string,
-          username: this.signUpForm.get('username')?.value as string,
-          email: this.signUpForm.get('email')?.value as string,
-        }
-        this.userService.create(user)
+        const user: User = new User(res.user?.uid as string, this.signUpForm.get('username')?.value as string, this.signUpForm.get('email')?.value as string);
+
+        this.userService.create(user.toObject())
           .then(() => {
             console.log('User added to DB', user);
           })

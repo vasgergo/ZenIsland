@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {authGuard} from './shared/services/guards/auth/auth.guard';
+import {isAdminGuard} from "./shared/services/guards/isAdmin/is-admin.guard";
 
 const routes: Routes = [
   {
@@ -25,7 +26,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/booking/booking.module').then(m => m.BookingModule),
     canActivate: [authGuard]
   },
-
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
+    canActivate: [authGuard, isAdminGuard]
+  },
   {
     path: '',
     redirectTo: '/home',

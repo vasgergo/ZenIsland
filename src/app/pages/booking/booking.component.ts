@@ -79,10 +79,7 @@ export class BookingComponent implements OnInit, OnDestroy {
     });
   }
 
-  updateTimeOptions(bookings
-                      :
-                      Array<Booking>
-  ) {
+  updateTimeOptions(bookings:Array<Booking>) {
     this.availableTimeOptions = this.possibleTimeOptions.filter(time => {
       return !bookings.some(booking => booking.time === time);
     });
