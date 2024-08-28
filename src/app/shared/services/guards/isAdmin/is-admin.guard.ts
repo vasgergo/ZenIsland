@@ -1,7 +1,7 @@
 import {CanActivateFn, Router} from '@angular/router';
 import {inject} from '@angular/core';
 import {UserService} from '../../user/user.service';
-import {firstValueFrom, from, map, Observable, of} from 'rxjs';
+import {map, Observable, of} from 'rxjs';
 
 export const isAdminGuard: CanActivateFn = (route, state):Observable<boolean> => {
     const userService = inject(UserService);
