@@ -19,7 +19,7 @@
       <div id="compName" routerLink="/home"><img src="assets/logo.jpg" alt="logo"><span>Zen Island</span></div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end">
         <a class="menu-item" fxHide.lt-md routerLinkActive="active-link" routerLink="/home">Home</a>
-        <a class="menu-item" fxHide.lt-md *ngIf="false" routerLinkActive="active-link" routerLink="/admin">Admin</a>
+        <a class="menu-item" fxHide.lt-md *ngIf="isAdmin$ | async" routerLinkActive="active-link" routerLink="/admin">Admin</a>
         <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" routerLinkActive="active-link" routerLink="/myBookings">My bookings</a>
         <a class="menu-item" fxHide.lt-md *ngIf="!userService.isSignedIn()" routerLinkActive="active-link" routerLink="/signin">Sign in</a>
         <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" (click)="signOut()">Sign out</a>
