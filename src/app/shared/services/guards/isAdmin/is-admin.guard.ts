@@ -3,20 +3,19 @@ import {inject} from '@angular/core';
 import {UserService} from '../../user/user.service';
 import {map, Observable, of} from 'rxjs';
 
-export const isAdminGuard: CanActivateFn = (route, state):Observable<boolean> => {
-    const userService = inject(UserService);
-    const router = inject(Router);
-    const userId = userService.getSignedInUserId();
+export const isAdminGuard: CanActivateFn = (route, state): Observable<boolean> => {
+  const userService = inject(UserService);
+  const router = inject(Router);
 
-    if (userId) {
-        return userService.isAdmin(userId).pipe(map((user) => {
-          if (user[0].admin) {
-            return true;
-          } else {
-            router.navigate(['/homes']);
-            return false;
-          }
-        }));
-    }
-    return of(false);
+  return userService.isAdmin().pipe(
+    map(isAdmin => {
+      console.log('isAdmin: ', isAdmin);
+      if (!isAdmin) {
+        router.navigate(['/home']);
+        return false;
+      } else {
+        return true;
+      }
+    })
+  );
 };

@@ -1,4 +1,7 @@
-export class User {
+import {UserInterface} from "./UserInterface";
+
+export class User implements UserInterface {
+
   id: string;
   username: string;
   email: string;

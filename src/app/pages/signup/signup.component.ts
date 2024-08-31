@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../shared/services/auth.service";
 import {User} from "../../shared/models/User";
 import {UserService} from "../../shared/services/user/user.service";
 import {confirmPasswordValidator} from "../../shared/validators/confirm-password.validator";
@@ -13,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class SignupComponent {
 
-  constructor(private authService: AuthService, private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   signUpForm = new FormGroup({
@@ -24,7 +23,7 @@ export class SignupComponent {
   }, {validators: confirmPasswordValidator});
 
   onSubmit() {
-    this.authService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string)
+    this.userService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string)
       .then((res) => {
         console.log('AUTH: Signup successful', res);
         const user: User = new User(res.user?.uid as string, this.signUpForm.get('username')?.value as string, this.signUpForm.get('email')?.value as string);
@@ -36,7 +35,6 @@ export class SignupComponent {
           .catch((err) => {
             console.log('User NOT added to DB', err);
           });
-        this.userService.setSignedInUser(res.user?.uid as string);
         this.router.navigate(['/']);
 
       })

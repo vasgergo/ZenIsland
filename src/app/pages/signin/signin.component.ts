@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../shared/services/auth.service";
 import {UserService} from "../../shared/services/user/user.service";
 import {Router} from "@angular/router";
 
@@ -17,7 +16,7 @@ export class SigninComponent implements OnInit{
     this.invalidSignIn = false;
   }
 
-  constructor(private authService: AuthService, private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router) {
   }
 
 
@@ -28,10 +27,9 @@ export class SigninComponent implements OnInit{
 
 
   onSubmit() {
-    this.authService.login(this.signinForm.get('email')?.value as string, this.signinForm.get('password')?.value as string)
+    this.userService.signin(this.signinForm.get('email')?.value as string, this.signinForm.get('password')?.value as string)
       .then((res) => {
         console.log('Login successful');
-        this.userService.setSignedInUser(res.user?.uid as string);
         console.log(res);
         this.router.navigate(['/home']);
       })
