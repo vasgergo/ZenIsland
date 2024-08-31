@@ -2,10 +2,17 @@ import {Injectable, signal} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {User} from "../../models/User";
 import {Router} from "@angular/router";
-import {map, Observable, of, Subscription} from "rxjs";
+import {combineLatest, map, Observable, of, Subscription, switchMap} from "rxjs";
 import {user} from "@angular/fire/auth";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserInterface} from "../../models/UserInterface";
+
+
+type UserIdEmail = {
+  id: string;
+  email: string;
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +23,7 @@ export class UserService {
 
   user$ = this.auth.user;
 
-  currentUserSignal = signal<UserInterface | null | undefined>(undefined);
+  currentUserSignal = signal<UserIdEmail | null | undefined>(undefined);
 
 
   constructor(private afs: AngularFirestore, private router: Router, private auth: AngularFireAuth) {
@@ -25,9 +32,7 @@ export class UserService {
       if (user) {
         this.currentUserSignal.set({
           id: user.uid,
-          username: 'asd',
           email: user.email || '',
-          admin: true
         });
       } else {
         this.currentUserSignal.set(null);
@@ -57,8 +62,11 @@ export class UserService {
   }
 
   isSignedIn(): boolean {
-
     return this.currentUserSignal() !== null && this.currentUserSignal() !== undefined;
+  }
+
+  create(user: User) {
+    return this.afs.collection<User>(this.path).add(user);
   }
 
   isSignedInObs(): Observable<boolean> {
@@ -67,22 +75,20 @@ export class UserService {
     );
   }
 
-  create(user: User) {
-    return this.afs.collection<User>(this.path).add(user);
-  }
 
   isAdmin(): Observable<boolean> {
-    if (!this.isSignedIn()) {
-      console.error('No user signed in from isAdmin()');
-      return of(false);
-    } else {
-      console.log('User signed in from isAdmin()', this.getSignedInUserId());
-      return this.afs.collection<User>(this.path, user => user.where('id', '==', this.currentUserSignal()?.id))
-        .valueChanges()
-        .pipe(
-          map(users => users.length > 0 && users[0].admin),
-        );
-    }
+    return this.isSignedInObs().pipe(
+      switchMap(isSignedIn => {
+        if (!isSignedIn) {
+          return of(false);
+        }
+        return this.afs.collection<User>(this.path, user => user.where('id', '==', this.currentUserSignal()?.id))
+          .valueChanges()
+          .pipe(
+            map(users => users.length > 0 && users[0].admin)
+          );
+      })
+    );
   }
 
 
