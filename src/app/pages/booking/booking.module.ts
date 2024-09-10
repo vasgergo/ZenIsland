@@ -13,22 +13,22 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { MatButton } from '@angular/material/button'
 
 @NgModule({
-    declarations: [BookingComponent],
-    providers: [provideNativeDateAdapter()],
-    imports: [
-        CommonModule,
-        BookingRoutingModule,
-        MatCard,
-        MatCalendar,
-        MatListItem,
-        MatList,
-        MatOption,
-        MatSelect,
-        MatFormField,
-        MatLabel,
-        ReactiveFormsModule,
-        MatButton,
-        MatCardTitle,
-    ],
+   declarations: [BookingComponent],
+   providers: [provideNativeDateAdapter()],
+   imports: [
+      CommonModule,
+      BookingRoutingModule,
+      MatCard,
+      MatCalendar,
+      MatListItem,
+      MatList,
+      MatOption,
+      MatSelect,
+      MatFormField,
+      MatLabel,
+      ReactiveFormsModule,
+      MatButton,
+      MatCardTitle,
+   ],
 })
 export class BookingModule {}

@@ -1,126 +1,126 @@
 .buttonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #864a1d;
-    position: sticky;
-    bottom: 0;
-    z-index: 1000;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #864a1d;
+   position: sticky;
+   bottom: 0;
+   z-index: 1000;
 }
 
 .buttonContainer h2 {
-    margin: 0;
-    font-family: Dubai, sans-serif;
-    color: #f3f3bd;
+   margin: 0;
+   font-family: Dubai, sans-serif;
+   color: #f3f3bd;
 }
 
 .buttonContainer button {
-    border-radius: 10px;
-    background-color: #f3f3bd;
-    color: #864a1d;
-    font-family: Bahnschrift, sans-serif;
+   border-radius: 10px;
+   background-color: #f3f3bd;
+   color: #864a1d;
+   font-family: Bahnschrift, sans-serif;
 }
 
 .cardDiv h2 {
-    font-family: Dubai, sans-serif;
-    color: #864a1d;
+   font-family: Dubai, sans-serif;
+   color: #864a1d;
 }
 
 //mobile
 @media (max-width: 600px) {
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+   form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
 
-    .cardDiv {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 40px;
-    }
-    .cardDiv h2 {
-        margin: 10px;
-        font-size: 10vw;
-    }
+   .cardDiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+   }
+   .cardDiv h2 {
+      margin: 10px;
+      font-size: 10vw;
+   }
 
-    .buttonContainer button {
-        margin: 10px;
-        padding: 10px;
-        width: 80%;
-        height: 50px;
-        border-radius: 10px;
-        font-size: 5vw;
-    }
+   .buttonContainer button {
+      margin: 10px;
+      padding: 10px;
+      width: 80%;
+      height: 50px;
+      border-radius: 10px;
+      font-size: 5vw;
+   }
 
-    mat-card {
-        width: 80%;
-    }
+   mat-card {
+      width: 80%;
+   }
 }
 
 //pc
 @media (min-width: 601px) {
-    form {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 80%;
-        overflow-y: hidden;
-    }
+   form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 80%;
+      overflow-y: hidden;
+   }
 
-    mat-card {
-        top: 100px;
-    }
+   mat-card {
+      top: 100px;
+   }
 
-    .datePckr {
-        width: 40%;
-    }
+   .datePckr {
+      width: 40%;
+   }
 
-    .dropDown {
-        width: 50%;
-        max-height: 100px;
-    }
+   .dropDown {
+      width: 50%;
+      max-height: 100px;
+   }
 
-    .cardDiv {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        height: 100%;
-    }
+   .cardDiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+   }
 
-    .cardDiv h2 {
-        position: absolute;
-        top: 100px;
-        font-size: 4vw;
-    }
+   .cardDiv h2 {
+      position: absolute;
+      top: 100px;
+      font-size: 4vw;
+   }
 
-    .buttonContainer button {
-        margin: 10px;
-        padding: 10px;
-        width: 300px;
-        height: 50px;
-        border-radius: 10px;
-        font-size: 1.5vw;
-    }
+   .buttonContainer button {
+      margin: 10px;
+      padding: 10px;
+      width: 300px;
+      height: 50px;
+      border-radius: 10px;
+      font-size: 1.5vw;
+   }
 }
 
 .textDanger {
-    color: red;
+   color: red;
 }
 
 #submitButton:hover:enabled {
-    cursor: pointer;
+   cursor: pointer;
 }
 
 #submitButton:disabled {
-    background-color: #c0bfbf;
-    color: #737373;
+   background-color: #c0bfbf;
+   color: #737373;
 }
 
 #submitButton:hover:disabled {
-    cursor: not-allowed;
+   cursor: not-allowed;
 }

@@ -8,14 +8,7 @@ import { MatButton } from '@angular/material/button'
 import { MatOption, MatSelect } from '@angular/material/select'
 
 @NgModule({
-    declarations: [MyBookingsComponent],
-    imports: [
-        CommonModule,
-        MyBookingsRoutingModule,
-        MatTableModule,
-        MatButton,
-        MatSelect,
-        MatOption,
-    ],
+   declarations: [MyBookingsComponent],
+   imports: [CommonModule, MyBookingsRoutingModule, MatTableModule, MatButton, MatSelect, MatOption],
 })
 export class MyBookingsModule {}
