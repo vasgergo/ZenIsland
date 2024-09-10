@@ -3,15 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { MyBookingsRoutingModule } from './my-bookings-routing.module';
 import { MyBookingsComponent } from './my-bookings.component';
-import {MatTableModule} from "@angular/material/table";
-import {MatButton} from "@angular/material/button";
-import {MatOption, MatSelect} from "@angular/material/select";
-
+import { MatTableModule } from '@angular/material/table';
+import { MatButton } from '@angular/material/button';
+import { MatOption, MatSelect } from '@angular/material/select';
 
 @NgModule({
-  declarations: [
-    MyBookingsComponent
-  ],
+  declarations: [MyBookingsComponent],
   imports: [
     CommonModule,
     MyBookingsRoutingModule,
@@ -19,6 +16,6 @@ import {MatOption, MatSelect} from "@angular/material/select";
     MatButton,
     MatSelect,
     MatOption,
-  ]
+  ],
 })
-export class MyBookingsModule { }
+export class MyBookingsModule {}

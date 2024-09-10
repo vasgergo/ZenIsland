@@ -1,7 +1,7 @@
-import {CanActivateFn, Router} from '@angular/router';
-import {inject} from '@angular/core';
-import {UserService} from "../../user/user.service";
-import {map} from "rxjs";
+import { CanActivateFn, Router } from '@angular/router';
+import { inject } from '@angular/core';
+import { UserService } from '../../user/user.service';
+import { map } from 'rxjs';
 
 export const authGuard: CanActivateFn = () => {
   const router = inject(Router);
@@ -17,7 +17,7 @@ export const authGuard: CanActivateFn = () => {
         console.log('authGuard is NOT SignedIn');
         return false;
       }
-    })
+    }),
   );
 
   // if (userService.isSignedIn()) {
@@ -28,5 +28,4 @@ export const authGuard: CanActivateFn = () => {
   //   console.log('authGuard is NOT SignedIn');
   //   return false;
   // }
-
 };

@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { SignupRoutingModule } from './signup-routing.module';
 import { SignupComponent } from './signup.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
-import {MatError, MatFormField, MatLabel} from "@angular/material/form-field";
-import {MatInput} from "@angular/material/input";
-import {MatButton} from "@angular/material/button";
-
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardTitle,
+} from '@angular/material/card';
+import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatButton } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    SignupComponent
-  ],
+  declarations: [SignupComponent],
   imports: [
     CommonModule,
     SignupRoutingModule,
@@ -27,7 +30,7 @@ import {MatButton} from "@angular/material/button";
     MatButton,
     MatCardTitle,
     MatLabel,
-    MatError
-  ]
+    MatError,
+  ],
 })
-export class SignupModule { }
+export class SignupModule {}
