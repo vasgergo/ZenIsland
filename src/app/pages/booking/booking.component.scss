@@ -1,4 +1,3 @@
-
 .buttonContainer {
   display: flex;
   flex-direction: column;
@@ -27,10 +26,8 @@
   color: #864a1d;
 }
 
-
 //mobile
 @media (max-width: 600px) {
-
   form {
     display: flex;
     flex-direction: column;
@@ -50,7 +47,6 @@
     font-size: 10vw;
   }
 
-
   .buttonContainer button {
     margin: 10px;
     padding: 10px;
@@ -63,13 +59,10 @@
   mat-card {
     width: 80%;
   }
-
-
 }
 
 //pc
 @media (min-width: 601px) {
-
   form {
     display: flex;
     flex-direction: row;
@@ -79,7 +72,7 @@
   }
 
   mat-card {
-    top: 100px
+    top: 100px;
   }
 
   .datePckr {
@@ -113,8 +106,6 @@
     border-radius: 10px;
     font-size: 1.5vw;
   }
-
-
 }
 
 .textDanger {
@@ -133,5 +124,3 @@
 #submitButton:hover:disabled {
   cursor: not-allowed;
 }
-
-

@@ -7,29 +7,56 @@
       <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="email" placeholder="Email" required>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            required
+          />
         </mat-form-field>
-        <mat-error *ngIf="signinForm.get('email')?.touched && signinForm.get('email')?.errors?.['required']">
+        <mat-error
+          *ngIf="
+            signinForm.get('email')?.touched &&
+            signinForm.get('email')?.errors?.['required']
+          "
+        >
           Email is required
         </mat-error>
-        <mat-error *ngIf="signinForm.get('email')?.touched && signinForm.get('email')?.errors?.['email']">
+        <mat-error
+          *ngIf="
+            signinForm.get('email')?.touched &&
+            signinForm.get('email')?.errors?.['email']
+          "
+        >
           Invalid email
         </mat-error>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" placeholder="Password" required>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+            required
+          />
         </mat-form-field>
-        <mat-error *ngIf="signinForm.get('password')?.touched && signinForm.get('password')?.errors?.['required']">
+        <mat-error
+          *ngIf="
+            signinForm.get('password')?.touched &&
+            signinForm.get('password')?.errors?.['required']
+          "
+        >
           Password is required
         </mat-error>
         <button mat-raised-button color="primary" type="submit">Sign in</button>
-        <mat-error *ngIf="invalidSignIn">
-          Sign in failed
-        </mat-error>
+        <mat-error *ngIf="invalidSignIn"> Sign in failed </mat-error>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button routerLink="/signup">Don't have an account? Sign up here!</button>
+      <button mat-button routerLink="/signup">
+        Don't have an account? Sign up here!
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
