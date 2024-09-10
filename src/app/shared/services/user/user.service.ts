@@ -61,6 +61,14 @@ export class UserService {
         return this.currentUserSignal()?.id || null;
     }
 
+    getUserById(id: string): Observable<UserInterface | null> {
+        return this.afs.collection<User>(this.path, user => user.where('id', '==', id))
+            .valueChanges()
+            .pipe(
+                map(users => users.length > 0 ? users[0] : null)
+            );
+    }
+
     isSignedIn(): boolean {
         return this.currentUserSignal() !== null && this.currentUserSignal() !== undefined;
     }

@@ -35,4 +35,8 @@ export class BookingService {
   delete(id: string) {
     return this.afs.collection<Booking>(this.path).doc(id).delete();
   }
+
+  getAllBooks() {
+    return this.afs.collection<Booking>(this.path).valueChanges();
+  }
 }
