@@ -8,4 +8,5 @@ const routes: Routes = [{ path: '', component: BookingComponent }]
    imports: [RouterModule.forChild(routes)],
    exports: [RouterModule],
 })
-export class BookingRoutingModule {}
+export class BookingRoutingModule {
+}

@@ -27,4 +27,5 @@ import { MatInput } from '@angular/material/input'
       MatError,
    ],
 })
-export class SigninModule {}
+export class SigninModule {
+}

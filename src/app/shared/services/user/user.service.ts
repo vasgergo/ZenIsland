@@ -24,7 +24,7 @@ export class UserService {
    constructor(
       private afs: AngularFirestore,
       private router: Router,
-      private auth: AngularFireAuth
+      private auth: AngularFireAuth,
    ) {
       console.log('UserService constructor')
       this.user$.subscribe((user) => {
@@ -89,7 +89,7 @@ export class UserService {
                .collection<User>(this.path, (user) => user.where('id', '==', this.currentUserSignal()?.id))
                .valueChanges()
                .pipe(map((users) => users.length > 0 && users[0].admin))
-         })
+         }),
       )
    }
 }

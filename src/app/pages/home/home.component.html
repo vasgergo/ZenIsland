@@ -1,17 +1,17 @@
-<div class="cards" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-   <mat-card *ngFor="let massage of massages">
+<div class='cards' fxLayout='row wrap' fxLayoutAlign='space-evenly center'>
+   <mat-card *ngFor='let massage of massages'>
       <mat-card-header>
          <mat-card-title>{{ massage.name }}</mat-card-title>
          <mat-card-subtitle>{{ massage.duration }} min {{ massage.price }}EUR</mat-card-subtitle>
       </mat-card-header>
-      <div class="cardImage">
-         <img mat-card-image [src]="massage.image" alt="Photo of a {{ massage.name }}" />
+      <div class='cardImage'>
+         <img mat-card-image [src]='massage.image' alt='Photo of a {{ massage.name }}' />
       </div>
       <mat-card-content>
          {{ massage.description }}
       </mat-card-content>
       <mat-card-actions>
-         <button mat-button (click)="book(massage.name)">Booking</button>
+         <button mat-button (click)='book(massage.name)'>Booking</button>
       </mat-card-actions>
    </mat-card>
 </div>

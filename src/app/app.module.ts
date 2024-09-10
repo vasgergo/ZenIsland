@@ -45,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http'
             authDomain: 'vasgergo-webkert.firebaseapp.com',
             messagingSenderId: '924022631597',
             measurementId: 'G-4WS8KV1PG7',
-         })
+         }),
       ),
       provideAuth(() => getAuth()),
       provideAnalytics(() => getAnalytics()),
@@ -60,4 +60,5 @@ import { HttpClientModule } from '@angular/common/http'
    providers: [ScreenTrackingService, UserTrackingService, provideAnimationsAsync()],
    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

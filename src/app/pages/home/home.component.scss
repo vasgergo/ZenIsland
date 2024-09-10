@@ -1,56 +1,56 @@
 mat-card {
-   position: relative;
-   width: 300px;
-   border-radius: 25px;
-   height: 550px;
-   padding-bottom: 50px; // A gomb magassága
-   box-shadow: grey 5px 5px 5px;
+  position: relative;
+  width: 300px;
+  border-radius: 25px;
+  height: 550px;
+  padding-bottom: 50px; // A gomb magassága
+  box-shadow: grey 5px 5px 5px;
 }
 
 mat-card-content {
-   padding: 5px 10px;
-   font-size: 15px;
-   text-align: justify;
-   overflow-y: auto;
-   max-height: calc(100% - 50px); // A mat-card magassága mínusz a gomb magassága
+  padding: 5px 10px;
+  font-size: 15px;
+  text-align: justify;
+  overflow-y: auto;
+  max-height: calc(100% - 50px); // A mat-card magassága mínusz a gomb magassága
 }
 
 mat-card-actions {
-   position: absolute;
-   bottom: 0;
-   width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 mat-card img {
-   display: block;
-   width: 100%;
-   margin: auto;
-   border-radius: 25px;
+  display: block;
+  width: 100%;
+  margin: auto;
+  border-radius: 25px;
 }
 
 mat-card button {
-   width: 100%;
-   border-radius: 25px;
-   background-color: #f3ab22;
-   height: 50px; // A gomb magassága
+  width: 100%;
+  border-radius: 25px;
+  background-color: #f3ab22;
+  height: 50px; // A gomb magassága
 }
 
 //mobile
 @media screen and (max-width: 600px) {
-   mat-card {
-      width: 90%;
-      margin: 20px;
-   }
+  mat-card {
+    width: 90%;
+    margin: 20px;
+  }
 }
 
 //pc
 @media screen and (min-width: 601px) {
-   .cards {
-      min-height: 100%;
-      margin: 50px 150px;
-   }
-   mat-card {
-      margin: 20px;
-      width: 350px;
-   }
+  .cards {
+    min-height: 100%;
+    margin: 50px 150px;
+  }
+  mat-card {
+    margin: 20px;
+    width: 350px;
+  }
 }

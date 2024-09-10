@@ -13,8 +13,9 @@ import { Router } from '@angular/router'
 export class SignupComponent {
    constructor(
       private userService: UserService,
-      private router: Router
-   ) {}
+      private router: Router,
+   ) {
+   }
 
    signUpForm = new FormGroup(
       {
@@ -23,7 +24,7 @@ export class SignupComponent {
          password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
          confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
       },
-      { validators: confirmPasswordValidator }
+      { validators: confirmPasswordValidator },
    )
 
    onSubmit() {
@@ -34,7 +35,7 @@ export class SignupComponent {
             const user: User = new User(
                res.user?.uid as string,
                this.signUpForm.get('username')?.value as string,
-               this.signUpForm.get('email')?.value as string
+               this.signUpForm.get('email')?.value as string,
             )
 
             this.userService

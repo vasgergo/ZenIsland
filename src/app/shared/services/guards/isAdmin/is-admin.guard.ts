@@ -16,6 +16,6 @@ export const isAdminGuard: CanActivateFn = (route, state): Observable<boolean> =
          } else {
             return true
          }
-      })
+      }),
    )
 }

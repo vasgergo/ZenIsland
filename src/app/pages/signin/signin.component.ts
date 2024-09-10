@@ -17,8 +17,9 @@ export class SigninComponent implements OnInit {
 
    constructor(
       private userService: UserService,
-      private router: Router
-   ) {}
+      private router: Router,
+   ) {
+   }
 
    signinForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),

@@ -8,4 +8,5 @@ import { AdminComponent } from './admin.component'
    declarations: [AdminComponent],
    imports: [CommonModule, AdminRoutingModule],
 })
-export class AdminModule {}
+export class AdminModule {
+}

@@ -17,7 +17,7 @@ export const authGuard: CanActivateFn = () => {
             console.log('authGuard is NOT SignedIn')
             return false
          }
-      })
+      }),
    )
 
    // if (userService.isSignedIn()) {

@@ -41,8 +41,9 @@ export class BookingComponent implements OnInit, OnDestroy {
       private route: ActivatedRoute,
       private router: Router,
       private bookingService: BookingService,
-      private datePipe: CustomDatePipe
-   ) {}
+      private datePipe: CustomDatePipe,
+   ) {
+   }
 
    bookingForm = new FormGroup({
       UID: new FormControl('', Validators.required),

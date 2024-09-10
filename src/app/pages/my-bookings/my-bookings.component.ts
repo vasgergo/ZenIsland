@@ -22,8 +22,9 @@ export class MyBookingsComponent implements OnInit, OnDestroy {
    constructor(
       private bookingService: BookingService,
       private userService: UserService,
-      private snackBar: MatSnackBar
-   ) {}
+      private snackBar: MatSnackBar,
+   ) {
+   }
 
    ngOnInit() {
       this.bookingsSubscription = this.bookingService.getAllByUID(this.userService.getSignedInUserId() as string).subscribe((bookings) => {

@@ -11,4 +11,5 @@ import { MatOption, MatSelect } from '@angular/material/select'
    declarations: [MyBookingsComponent],
    imports: [CommonModule, MyBookingsRoutingModule, MatTableModule, MatButton, MatSelect, MatOption],
 })
-export class MyBookingsModule {}
+export class MyBookingsModule {
+}

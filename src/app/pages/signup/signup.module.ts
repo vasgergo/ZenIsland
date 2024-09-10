@@ -27,4 +27,5 @@ import { MatButton } from '@angular/material/button'
       MatError,
    ],
 })
-export class SignupModule {}
+export class SignupModule {
+}

@@ -8,4 +8,5 @@ const routes: Routes = [{ path: '', component: SigninComponent }]
    imports: [RouterModule.forChild(routes)],
    exports: [RouterModule],
 })
-export class SigninRoutingModule {}
+export class SigninRoutingModule {
+}

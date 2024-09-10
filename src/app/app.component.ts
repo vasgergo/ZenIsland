@@ -16,11 +16,13 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isAdmin$ = this.userService.isAdmin()
    }
 
-   ngOnInit() {}
+   ngOnInit() {
+   }
 
    signOut() {
       this.userService.signout()
    }
 
-   ngOnDestroy(): void {}
+   ngOnDestroy(): void {
+   }
 }

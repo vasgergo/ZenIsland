@@ -7,7 +7,8 @@ import { Massage } from '../../models/Massage'
    providedIn: 'root',
 })
 export class MassageService {
-   constructor(private afs: AngularFirestore) {}
+   constructor(private afs: AngularFirestore) {
+   }
 
    path: string = 'Massages'
 

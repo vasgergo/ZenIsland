@@ -31,4 +31,5 @@ import { MatButton } from '@angular/material/button'
       MatCardTitle,
    ],
 })
-export class BookingModule {}
+export class BookingModule {
+}

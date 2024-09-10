@@ -11,4 +11,5 @@ import { MatButton } from '@angular/material/button'
    declarations: [HomeComponent],
    imports: [CommonModule, HomeRoutingModule, MatCardModule, FlexLayoutModule, MatButton],
 })
-export class HomeModule {}
+export class HomeModule {
+}

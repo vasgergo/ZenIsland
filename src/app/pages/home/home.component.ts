@@ -18,8 +18,9 @@ export class HomeComponent implements OnInit, OnDestroy {
    constructor(
       private router: Router,
       private massageService: MassageService,
-      private userService: UserService
-   ) {}
+      private userService: UserService,
+   ) {
+   }
 
    ngOnInit() {
       this.massageService.getAll().subscribe((data) => {

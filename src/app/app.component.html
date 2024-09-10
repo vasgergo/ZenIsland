@@ -1,35 +1,40 @@
 <style>
    @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Playball&display=swap');
 </style>
-<mat-sidenav-container class="sidenav-container">
-   <mat-sidenav #sidenav class="sidenav" mode="over">
+<mat-sidenav-container class='sidenav-container'>
+   <mat-sidenav #sidenav class='sidenav' mode='over'>
       <mat-nav-list>
-         <a mat-list-item routerLink="/home" (click)="sidenav.close()">Home</a>
-         <a mat-list-item *ngIf="userService.isSignedIn()" (click)="sidenav.close()" routerLink="/myBookings">My bookings</a>
-         <a mat-list-item *ngIf="userService.isSignedIn()" (click)="sidenav.close(); signOut()">Sign out</a>
-         <a mat-list-item *ngIf="!userService.isSignedIn()" routerLink="/signin" (click)="sidenav.close()">Sign in</a>
+
+         <a mat-list-item routerLink='/home' (click)='sidenav.close()'>Home</a>
+         <a mat-list-item *ngIf='userService.isSignedIn()' (click)='sidenav.close()' routerLink='/myBookings'>My
+            bookings</a>
+         <a mat-list-item *ngIf='userService.isSignedIn()' (click)='sidenav.close(); signOut()'>Sign out</a>
+         <a mat-list-item *ngIf='!userService.isSignedIn()' routerLink='/signin' (click)='sidenav.close()'>Sign in</a>
       </mat-nav-list>
    </mat-sidenav>
 
    <mat-sidenav-content>
       <mat-toolbar>
-         <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
+         <button mat-icon-button (click)='sidenav.toggle()' fxHide.gt-sm>
             <mat-icon>menu</mat-icon>
          </button>
-         <div id="compName" routerLink="/home"><img src="assets/logo.jpg" alt="logo" /><span>Zen Island</span></div>
-         <div fxFlex fxLayout fxLayoutAlign="flex-end">
-            <a class="menu-item" fxHide.lt-md routerLinkActive="active-link" routerLink="/home">Home</a>
-            <a class="menu-item" fxHide.lt-md *ngIf="isAdmin$ | async" routerLinkActive="active-link" routerLink="/admin">Admin</a>
-            <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" routerLinkActive="active-link" routerLink="/myBookings">My bookings</a>
-            <a class="menu-item" fxHide.lt-md *ngIf="!userService.isSignedIn()" routerLinkActive="active-link" routerLink="/signin">Sign in</a>
-            <a class="menu-item" fxHide.lt-md *ngIf="userService.isSignedIn()" (click)="signOut()">Sign out</a>
+         <div id='compName' routerLink='/home'><img src='assets/logo.jpg' alt='logo' /><span>Zen Island</span></div>
+         <div fxFlex fxLayout fxLayoutAlign='flex-end'>
+            <a class='menu-item' fxHide.lt-md routerLinkActive='active-link' routerLink='/home'>Home</a>
+            <a class='menu-item' fxHide.lt-md *ngIf='isAdmin$ | async' routerLinkActive='active-link'
+               routerLink='/admin'>Admin</a>
+            <a class='menu-item' fxHide.lt-md *ngIf='userService.isSignedIn()' routerLinkActive='active-link'
+               routerLink='/myBookings'>My bookings</a>
+            <a class='menu-item' fxHide.lt-md *ngIf='!userService.isSignedIn()' routerLinkActive='active-link'
+               routerLink='/signin'>Sign in</a>
+            <a class='menu-item' fxHide.lt-md *ngIf='userService.isSignedIn()' (click)='signOut()'>Sign out</a>
          </div>
       </mat-toolbar>
       <router-outlet></router-outlet>
       <footer>
-         <div class="company-name">Zen Island Company</div>
-         <div class="phone">+36 99 123 45678</div>
-         <div class="email">info&#64;zenisland.com</div>
+         <div class='company-name'>Zen Island Company</div>
+         <div class='phone'>+36 99 123 45678</div>
+         <div class='email'>info&#64;zenisland.com</div>
       </footer>
    </mat-sidenav-content>
 </mat-sidenav-container>
