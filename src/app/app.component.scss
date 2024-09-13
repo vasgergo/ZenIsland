@@ -1,35 +1,103 @@
 @import '.././styles/global-variables';
 
-#compName img {
+//header
+
+header {
+  height: 70px;
+  max-height: 70px;
+  padding: 0 30px;
+  border-radius: 10px 10px 50px 50px;
+  margin: 0 2%;
+
+
+  //flexbox
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  background-color: $light;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  //font
+  font-family: Bahnschrift, serif;
+  font-size: 1.3rem;
+  color: white;
+}
+
+//logo and company name
+#company_name_container {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+//logo
+#company_name_container img {
   height: 50px;
   border-radius: 10px;
 }
 
-#compName {
-  display: flex;
-  height: 100%;
-  align-content: center;
-  color: #6b2e02;
-  font-family: sans-serif;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-#compName > * {
-  margin: 0 10px;
-}
-
-#compName span {
-  font-size: 40px;
+//Zen Island
+#company_name_container span {
+  font-size: 50px;
   font-family: 'Playball', cursive;
   font-weight: 200;
   font-style: normal;
+  color: $extreme-dark;
 }
 
+
+nav {
+  display: flex;
+  gap: 2vw;
+  height: 100%;
+  align-items: center;
+}
+
+header a:hover {
+  background-color: $dark;
+  //color: $extreme-light;
+}
+
+.active-link {
+  background-color: $dark;
+}
+
+header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  height: 80%;
+  padding: 0 1rem;
+  border-radius: 10px;
+
+
+}
+
+header #auth-nav {
+  margin-right: 60px;
+  margin-left: 3vw;
+}
+
+//header end
+
+//whole page
 .sidenav-container {
   height: 100%;
-  background-color: #f3f3bd;
+  background-color: $extreme-light;
   font-family: Bahnschrift, sans-serif;
 }
 
@@ -37,29 +105,8 @@
   width: 250px;
 }
 
-.menu-item {
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  padding: 10px 30px;
-  display: block;
-  border-radius: 10px;
-}
 
-.active-link {
-  background-color: #8c3a00;
-}
-
-.menu-item:hover {
-  color: #e8e817;
-}
-
-mat-toolbar {
-  background-color: #9d7611;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+//footer
 
 footer img {
   height: 50px;
@@ -68,9 +115,16 @@ footer img {
 
 footer {
   z-index: 100;
-  background-color: #9d7611;
+  background-color: $light;
   color: white;
   text-align: center;
   padding: 10px;
   margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+
+  #company_name_container span {
+    font-size: 1.8rem;
+  }
 }
